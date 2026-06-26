@@ -46,7 +46,7 @@ def run_ingestion_pipeline():
             
             if msg is not None:
                 if msg.error():
-                    print(f"⚠️ Kafka error: {msg.error()}")
+                    print(f"Kafka error: {msg.error()}")
                     continue
                 
                 # Parse raw JSON data
@@ -73,9 +73,9 @@ def run_ingestion_pipeline():
                         batch_data, 
                         column_names=['event_time', 'symbol', 'trade_id', 'price', 'quantity', 'buyer_is_maker']
                     )
-                    print(f"🚀 Successfully inserted a batch of {len(batch_data)} rows into ClickHouse.")
+                    print(f"Successfully inserted a batch of {len(batch_data)} rows into ClickHouse.")
                 except Exception as e:
-                    print(f"❌ ClickHouse insert failed: {e}")
+                    print(f"ClickHouse insert failed: {e}")
                 finally:
                     # Clear batch and reset timer
                     batch_data.clear()
