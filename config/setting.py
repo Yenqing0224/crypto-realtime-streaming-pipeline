@@ -11,7 +11,7 @@ KAFKA_TOPIC = 'crypto-trades'
 KAFKA_GROUP_ID = 'clickhouse-consumer-group'
 
 # Binance
-BINANCE_WS_URL = 'wss://stream.binance.com:9443/ws/btcusdt@trade/ethusdt@trade'
+BINANCE_WS_URL = 'wss://stream.binance.com:9443/stream?streams=btcusdt@trade/ethusdt@trade'
 
 # ClickHouse
 CLICKHOUSE_HOST = os.getenv('CLICKHOUSE_HOST', 'localhost')
